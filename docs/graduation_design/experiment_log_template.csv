@@ -1,0 +1,2 @@
+participant_id,trial_id,task_id,scenario_id,target_zone_shape,target_zone_radius_m,trial_name,episode_dir,episode_count,success,duration_s,regrasp_count,micro_adjust_count,alignment_error_mm,collision_count,difficulty_score,fatigue_score,control_score,notes
+P01,1,A2,e2_wrench,circle,0.12,A2_P01_T01,,0,1,0.0,0,0,,0,0,0,0,

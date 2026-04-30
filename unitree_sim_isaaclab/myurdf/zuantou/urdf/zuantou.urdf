@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="电动钻头.SLDASM">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.076943 0.15197 0.065085"
+        rpy="0 0 0" />
+      <mass
+        value="1" />
+      <inertia
+        ixx="0.018794"
+        ixy="-0.0022865"
+        ixz="1.1675E-08"
+        iyy="0.0058473"
+        iyz="-1.213E-06"
+        izz="0.021439" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://电动钻头.SLDASM/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://电动钻头.SLDASM/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="Empty_Link">
+    <inertial>
+      <origin
+        xyz="-0.0026155 3.5612E-08 -2.5772E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.92786" />
+      <inertia
+        ixx="0.0002172"
+        ixy="1.4257E-09"
+        ixz="-1.0123E-09"
+        iyy="0.00063576"
+        iyz="-2.8102E-10"
+        izz="0.00063576" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://电动钻头.SLDASM/meshes/Empty_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://电动钻头.SLDASM/meshes/Empty_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="01"
+    type="continuous">
+    <origin
+      xyz="0 -0.065039 0.25516"
+      rpy="2.256 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="Empty_Link" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+</robot>

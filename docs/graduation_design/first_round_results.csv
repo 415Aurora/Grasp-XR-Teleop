@@ -1,0 +1,5 @@
+participant_id,trial_id,task_id,scenario_id,success,duration_s,regrasp_count,micro_adjust_count,alignment_error_mm,collision_count,difficulty_score,fatigue_score,control_score,notes
+P01,1,A1,e1,,,,,,,,,,
+P01,1,A2,e2,,,,,,,,,,
+P01,1,B1,e3,,,,,,,,,,
+P01,1,C1,e4,,,,,,,,,,
