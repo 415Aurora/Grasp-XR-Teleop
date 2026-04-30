@@ -3,7 +3,7 @@ import unittest
 import zipfile
 from pathlib import Path
 
-from graduation_design.tool_asset import (
+from unitree_sim_isaaclab.tools.tool_asset_utils import (
     build_import_plan,
     inspect_asset_archive,
     render_import_plan,

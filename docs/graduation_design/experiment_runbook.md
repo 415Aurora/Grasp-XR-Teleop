@@ -20,8 +20,8 @@ The recommended thesis mainline is `A2`, defined as wrench grasp-and-transfer in
 ## Command Generator
 
 ```bash
-python3 -m graduation_design.experiment_session A1 --participant-id P01 --trial-index 1
-python3 -m graduation_design.experiment_session B1 --participant-id P02 --trial-index 3
+python3 teleop/utils/experiment_session.py A1 --participant-id P01 --trial-index 1
+python3 teleop/utils/experiment_session.py B1 --participant-id P02 --trial-index 3
 python3 teleop/utils/formal_trial.py prepare A2 --participant-id P01 --trial-index 1
 ```
 
@@ -95,7 +95,7 @@ python3 teleop/utils/formal_trial.py update-record A2 \
 Use the summary tool on the completed CSV file:
 
 ```bash
-python3 -m graduation_design.experiment_summary <your_csv_file>
+python3 teleop/utils/experiment_summary.py <your_csv_file>
 ```
 
 Copy the generated Markdown table into the thesis result draft, then match it with screenshots and case analysis.

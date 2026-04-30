@@ -1,6 +1,6 @@
 import unittest
 
-from graduation_design.task_runner import (
+from teleop.utils.task_runner import (
     build_recording_command,
     build_sim_command,
     get_task_definition,

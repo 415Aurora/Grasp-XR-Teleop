@@ -14,10 +14,10 @@
 ## 推荐实验流程
 
 1. 启动 `sim_main.py` 对应任务场景
-2. 用 `python -m graduation_design.task_runner <task_id>` 生成标准命令
+2. 用 `python teleop/utils/task_runner.py <task_id>` 生成标准命令
 3. 用 `teleop_hand_and_arm.py --record` 采集遥操作轨迹
 3. 将单次实验结果登记到 `experiment_log_template.csv`
-4. 用 `python -m graduation_design.experiment_summary <csv>` 输出汇总表
+4. 用 `python teleop/utils/experiment_summary.py <csv>` 输出汇总表
 5. 将成功案例、失败案例截图和汇总表纳入论文结果章节
 
 ## 现有录制入口
@@ -43,8 +43,8 @@
 使用下面的命令为正式实验生成统一的仿真和录制命令：
 
 ```bash
-python3 -m graduation_design.task_runner A1 --participant-id P01 --trial-index 1
-python3 -m graduation_design.task_runner B1 --participant-id P02 --trial-index 3
+python3 teleop/utils/task_runner.py A1 --participant-id P01 --trial-index 1
+python3 teleop/utils/task_runner.py B1 --participant-id P02 --trial-index 3
 ```
 
 该工具会输出：
@@ -60,8 +60,8 @@ python3 -m graduation_design.task_runner B1 --participant-id P02 --trial-index 3
 如果要执行单次正式实验并同时拿到 CSV 记录骨架，使用：
 
 ```bash
-python3 -m graduation_design.experiment_session A1 --participant-id P01 --trial-index 1
-python3 -m graduation_design.experiment_session C1 --participant-id P02 --trial-index 4
+python3 teleop/utils/experiment_session.py A1 --participant-id P01 --trial-index 1
+python3 teleop/utils/experiment_session.py C1 --participant-id P02 --trial-index 4
 ```
 
 如果要按正式试次流程一次性完成“试次目录初始化 + 命令生成 + episode 汇总 + CSV 回填”，使用：

@@ -11,7 +11,7 @@ Recommended first-round scope:
 Generate the full command sheet with:
 
 ```bash
-python3 -m graduation_design.experiment_plan --participant-ids P01 --task-ids A1 A2 B1 C1 --trials-per-task 1
+python3 teleop/utils/experiment_plan.py --participant-ids P01 --task-ids A1 A2 B1 C1 --trials-per-task 1
 ```
 
 Recommended execution order:
@@ -32,5 +32,5 @@ After finishing the first round:
 
 1. Fill the completed rows into `experiment_log_template.csv`
 2. Save success and failure screenshots
-3. Run `python3 -m graduation_design.experiment_summary <csv>`
+3. Run `python3 teleop/utils/experiment_summary.py <csv>`
 4. Review which task fails most often before inviting more participants

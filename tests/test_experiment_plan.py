@@ -1,6 +1,6 @@
 import unittest
 
-from graduation_design.experiment_plan import (
+from teleop.utils.experiment_plan import (
     build_plan_rows,
     render_markdown_plan,
 )

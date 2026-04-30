@@ -1,6 +1,6 @@
 import unittest
 
-from graduation_design.mesh_import import (
+from unitree_sim_isaaclab.tools.mesh_import_utils import (
     build_mesh_import_spec,
     render_mesh_import_command,
 )

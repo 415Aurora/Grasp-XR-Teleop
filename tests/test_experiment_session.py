@@ -2,7 +2,7 @@ import csv
 import io
 import unittest
 
-from graduation_design.experiment_session import (
+from teleop.utils.experiment_session import (
     TRIAL_FIELDNAMES,
     append_trial_row,
     build_trial_row,

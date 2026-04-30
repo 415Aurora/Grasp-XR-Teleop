@@ -1,6 +1,6 @@
 import unittest
 
-from graduation_design.experiment_summary import (
+from teleop.utils.experiment_summary import (
     load_records,
     render_markdown,
     summarize_records,
