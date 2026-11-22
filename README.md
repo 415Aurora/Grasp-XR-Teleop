@@ -4,6 +4,12 @@
 
 > **Attribution:** This is a project-specific research extension built on [Unitree's `xr_teleoperate`](https://github.com/unitreerobotics/xr_teleoperate) and associated simulation components. The upstream documentation is preserved below. Upstream functionality, imagery and demo videos should **not** be interpreted as original contributions to this project.
 
+## System workflow
+
+![XR humanoid teleoperation, experimental execution, episode logging and trial evaluation](docs/visuals/system-workflow.svg)
+
+*Architecture summary based on the documented code paths. This is a vector diagram, not a recorded robot run. Robot and simulation execution are alternative settings, not evidence of real-world validation.*
+
 ## Project overview
 
 The repository supports an experimental workflow from XR-based humanoid teleoperation to structured manipulation trials, episode recording, and post-trial summaries. The current documented research task is **wrench grasp-and-transfer** in simulation, with an explicitly specified target zone and trial protocol.
