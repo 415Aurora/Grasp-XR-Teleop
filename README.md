@@ -1,3 +1,57 @@
+# Grasp-XR-Teleop
+
+**XR teleoperation and reproducible tool-manipulation demonstrations for Unitree humanoid robots.**
+
+> **Attribution:** This is a project-specific research extension built on [Unitree's `xr_teleoperate`](https://github.com/unitreerobotics/xr_teleoperate) and associated simulation components. The upstream documentation is preserved below. Upstream functionality, imagery and demo videos should **not** be interpreted as original contributions to this project.
+
+## Project overview
+
+The repository supports an experimental workflow from XR-based humanoid teleoperation to structured manipulation trials, episode recording, and post-trial summaries. The current documented research task is **wrench grasp-and-transfer** in simulation, with an explicitly specified target zone and trial protocol.
+
+### Project-specific components in this repository
+
+| Component | What to inspect |
+| --- | --- |
+| Task and trial definitions | [Graduation-design research workspace](docs/graduation_design/README_zh-CN.md), [task mapping](docs/graduation_design/task_mapping.md) |
+| Standardized experiment execution | [Task runner](teleop/utils/task_runner.py), [session helper](teleop/utils/experiment_session.py), [formal trial workflow](teleop/utils/formal_trial.py) |
+| Experimental result processing | [Experiment summary](teleop/utils/experiment_summary.py), [runbook](docs/graduation_design/experiment_runbook.md) |
+| Wrench scene extension | [`e2_wrench` task configuration](unitree_sim_isaaclab/tasks/g1_tasks/e2_wrench/e2_wrench_cfg.py), [asset plan](docs/graduation_design/wrench_asset_plan.md) |
+| Software regression checks | [Tests](tests/) for trial tooling, task mapping and the wrench extension |
+
+These links identify the project-specific work to review; the repository also includes substantial third-party code and assets. See the original projects' licenses and attribution before redistributing any component.
+
+### Research task and evaluation protocol
+
+- **Main documented task:** `A2` — pick up a wrench and place it in a circular target zone in the `e2_wrench` simulation scene.
+- **Target radius:** `0.12 m`. A successful trial requires the released wrench to settle inside the target zone without falling from the table.
+- **Data collection:** record teleoperation episodes, label outcomes, and log trial duration, re-grasp attempts, fine adjustments and collisions.
+- **Evidence status:** the checked-in [first-round CSV](docs/graduation_design/first_round_results.csv) currently contains blank outcome fields; it is **not** evidence of a measured grasp success rate. Do not infer performance from upstream demo videos.
+
+### Get started with the trial workflow
+
+The simulation, XR drivers and device-specific setup are described in the upstream documentation below. Once those prerequisites are installed:
+
+```bash
+python3 teleop/utils/task_runner.py A2 --participant-id P01 --trial-index 1
+python3 teleop/utils/formal_trial.py prepare A2 --participant-id P01 --trial-index 1
+# Start the generated simulation and teleoperation commands, then record an episode.
+python3 teleop/utils/formal_trial.py summarize-episodes A2 --participant-id P01 --trial-index 1
+```
+
+See the [one-trial runbook](docs/graduation_design/experiment_runbook.md) for result labeling and the exact success rule. Hardware and native simulation execution require compatible devices, SDKs and platform dependencies; generating trial commands alone does not validate the full pipeline.
+
+### Scope and next validation steps
+
+This repository contains the teleoperation/simulation and experiment-management components documented above. A complete, reproducible GR00T training and policy-evaluation workflow is **not currently documented in this repository**; it should be added with its own configs, dataset provenance and quantitative baselines before making learning-performance claims. Add a project-recorded demo and representative success/failure trajectories once publishable.
+
+**Related control project:** [RoboNeck-AVP](https://github.com/415Aurora/RoboNeck-AVP) — Apple Vision Pro head-pose retargeting and Dynamixel neck control.
+
+---
+
+## Original upstream `xr_teleoperate` documentation
+
+The following documentation is retained for reference and belongs to the upstream project, except for any separately identified modifications.
+
 <div align="center">
   <h1 align="center">xr_teleoperate</h1>
   <a href="https://www.unitree.com/" target="_blank">
